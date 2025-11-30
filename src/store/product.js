@@ -6,9 +6,9 @@ console.log("VITE_API_URL=", apiUrl);
 export const useProductStore = create((set) => ({
   products: [],
 
-  setProducts: (products) => set({ products }),
+  setproducts: (products) => set({ products }),
 
-  createProduct: async (newProduct) => {
+  createproduct: async (newProduct) => {
     if (!newProduct.name || !newProduct.image || !newProduct.price) {
       return { success: false, message: "Please fill in all fields." };
     }
