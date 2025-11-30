@@ -1,4 +1,4 @@
-name: Backend Pipline
+name: FrontEnd Pipline
 
 on:
     push:
@@ -34,7 +34,7 @@ jobs:
               uses: actions/checkout@v6
 
             - name: build docker image
-              run: docker build -t ${{ env.BOCKER_IMAGE}} .
+              run: docker build -t ${{ env.BOCKER_IMAGE}} --build-arg VITE_API_URL=https://api.session15.lebondeveloppeur.net .
 
             - name: Tag docker image
               run: docker tag ${{ env.BOCKER_IMAGE}} ${{ env.BOCKER_IMAGE}}:v${{github.run_number}}
